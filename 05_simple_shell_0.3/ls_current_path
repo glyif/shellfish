@@ -1,0 +1,33 @@
+# run ls
+command="ls"
+tmp_file="checker_tmp_file_$RANDOM"
+
+# clean up
+stop_shell
+rm -f $tmp_file
+
+# create a pseudo random file
+touch $tmp_file
+# empty PATH
+OLDPATH="$PATH"
+PATH=".:$PATH"
+# send commands
+$ECHO "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
+
+# put PATH back
+PATH="$OLDPATH"
+
+# wait a little bit
+$SLEEP $SLEEPSECONDS
+
+# check the result
+res=`$CAT "$OUTPUTFILE"`
+if [ "$res" == "cisfun" ]; then
+    print_ok
+else
+    print_ko
+fi
+
+# clean up
+stop_shell
+$RM -f $tmp_file
