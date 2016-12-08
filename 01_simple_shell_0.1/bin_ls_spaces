@@ -1,4 +1,4 @@
-# run ls
+# run /bin/ls many times, with a lot of spaces everywhere
 command="/bin/ls
      /bin/ls
 /bin/ls     
