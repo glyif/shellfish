@@ -1,4 +1,7 @@
-# run /bin/ls
+#!/bin/bash
+#
+# test simple command /bin/ls
+
 command="/bin/ls"
 tmp_file="checker_tmp_file_$RANDOM"
 
