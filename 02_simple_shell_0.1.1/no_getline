@@ -1,4 +1,7 @@
+#!/bin/bash
+#
 # check if the getline function was used by using ltrace
+
 command="/bin/ls
 /bin/ls
 /bin/ls"
