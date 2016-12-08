@@ -1,4 +1,8 @@
-# run ls
+#!/bin/bash
+#
+# check that the program ls is not found if the PATH is empty
+# check also that an error message is printed to the user
+
 command="ls"
 tmp_file="checker_tmp_file_$RANDOM"
 
