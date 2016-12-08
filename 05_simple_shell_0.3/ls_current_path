@@ -1,4 +1,7 @@
-# run ls
+#!/bin/bash
+#
+# check that the PATH is checked in the right order
+
 command="ls"
 tmp_file="checker_tmp_file_$RANDOM"
 
