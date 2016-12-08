@@ -1,4 +1,7 @@
-# run ls
+#!/bin/bash
+#
+# run ls with spaces everywhere
+
 command="ls
      ls
 ls     
