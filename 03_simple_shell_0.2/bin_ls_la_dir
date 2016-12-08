@@ -1,4 +1,7 @@
+#!/bin/bash
+#
 # run ls with arguments
+
 tmp_file=".checker_tmp_file_$RANDOM"
 tmp_filedir="/tmp"
 tmp_filepath="$tmp_filedir/$tmp_file"
