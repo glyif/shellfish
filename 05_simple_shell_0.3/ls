@@ -1,4 +1,4 @@
-# run ls
+# simple test with ls to check if the shell can find ls in the PATH
 command="ls"
 tmp_file="checker_tmp_file_$RANDOM"
 
