@@ -1,4 +1,7 @@
-# run ls
+#!/bin/bash
+#
+# run a mix of ls and /bin/ls many times
+
 command="ls
 ls
 ls
