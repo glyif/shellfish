@@ -1,4 +1,4 @@
-# run ls
+# check if a medium size command line does not break the shell
 command="                                       /bin/ls                                                                                                                                                                                                                                                                                                                                                                                                                                                     "
 tmp_file="checker_tmp_file_$RANDOM"
 
