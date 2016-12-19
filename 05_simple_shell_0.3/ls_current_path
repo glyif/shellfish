@@ -13,7 +13,7 @@ rm -f $tmp_file
 touch $tmp_file
 # empty PATH
 OLDPATH="$PATH"
-PATH=".:$PATH"
+PATH=":$PATH"
 # send commands
 $ECHO "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
 
