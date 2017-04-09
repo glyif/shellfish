@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "tasks.h"
 #include <unistd.h>
 
 int check_one(void)
@@ -8,7 +9,7 @@ int check_one(void)
 	check = access("README.md", F_OK);
 	if (check != -1)
 	{
-		printf("hehe, you have the readme\n");
+		printf("README CHECK [" ANSI_COLOR_GREEN "OK" ANSI_COLOR_RESET "]" "\n");
 		return (0);
 	}
 	else
