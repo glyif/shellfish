@@ -6,7 +6,7 @@ int main(int argc, char **argv)
 	int i, j;
 	int task;
 	tasks_t assignment[] = {
-		{ 0, check_one}
+		{ 0, check_zero}
 	};
 
 	if (argc == 1)

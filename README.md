@@ -9,4 +9,14 @@ Project Shellfish is an automated task checker for Holberton School's 0x15. C - 
 ## File Breakdown
 
 ## Using
+1) Compile the project
+```bash
+make all
+```
 
+2) Run `./shellfish`
+```bash
+./shellfish
+```
+
+You can specify what tasks you want to check, not specifying will check all
