@@ -10,6 +10,8 @@ int main(int argc, char **argv)
 		{99, NULL}
 	};
 
+	system("touch your.txt expected.txt differenc.txt");
+
 	if (argc == 1)
 	{
 		for (i = 0; assignment[i].f != NULL; i++)
@@ -31,6 +33,8 @@ int main(int argc, char **argv)
 				}
 			}
 		}
+
+	system("rm your.txt expected.txt differenc.txt");
 
 	return (0);
 }
