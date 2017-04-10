@@ -1,3 +1,3 @@
 #!/bin/sh
 make all
-sudo cp ./shellfish /bin/shellfish
+mv ./shellfish /usr/bin/shellfish

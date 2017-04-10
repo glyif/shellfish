@@ -22,4 +22,6 @@ void print_check(int task);
 void all_good(void);
 void no_good(void);
 
+int is_update(char *update);
+void update_shellfish(void);
 #endif
