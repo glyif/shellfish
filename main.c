@@ -19,17 +19,21 @@ int main(int argc, char **argv)
 			print_check(assignment[i].task_id);
 			assignment[i].f();
 		}
+	
 	}
 	else if (argc >= 2)
-		for (i = 1; i < argc; i++)
+		if (!is_update(argv[1]))
 		{
-			task = string_int(argv[i]);
-
-			for (j = 0; j < 1; j++)
+			for (i = 1; i < argc; i++)
 			{
-				if (task == assignment[j].task_id)
+				task = string_int(argv[i]);
+
+				for (j = 0; j < 1; j++)
 				{
-					assignment[j].f();
+					if (task == assignment[j].task_id)
+					{
+						assignment[j].f();
+					}
 				}
 			}
 		}
