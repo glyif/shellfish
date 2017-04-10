@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "header.h"
 
 int main(int argc, char **argv)
@@ -6,13 +5,17 @@ int main(int argc, char **argv)
 	int i, j;
 	int task;
 	tasks_t assignment[] = {
-		{ 0, check_zero}
+		{ 0, check_readme}, {1, _compiler},
+		{99, NULL}
 	};
 
 	if (argc == 1)
 	{
-		for (i = 0; i < 1; i++)
+		for (i = 0; assignment[i].f != NULL; i++)
+		{
+			print_check(assignment[i].task_id);
 			assignment[i].f();
+		}
 	}
 	else if (argc >= 2)
 		for (i = 1; i < argc; i++)

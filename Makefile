@@ -4,8 +4,9 @@ LIBS=
 EXENAME=shellfish
 
 CFILES=\
-       tasks.c\
-       helper.c
+		mandatory.c\
+		output.c\
+		helper.c
 
 GLOBAL_HEADERS=\
 	header.h
