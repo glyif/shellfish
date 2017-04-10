@@ -6,7 +6,8 @@ EXENAME=shellfish
 CFILES=\
 		mandatory.c\
 		output.c\
-		helper.c
+		helper.c\
+		update.c
 
 GLOBAL_HEADERS=\
 	header.h
