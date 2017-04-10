@@ -23,13 +23,41 @@ int _compiler(void)
 	char buffer[1024];
 	ssize_t diffread;
 
-	system("gcc --version > your-output.txt");
-	system("diff your-output.txt gcc--version.txt > difference.txt");
+	system("gcc --version > your.txt");
+	system("diff your.txt gcc--version.txt > difference.txt");
 
 	fd = open("difference.txt", O_RDONLY);
 	diffread = read(fd, &buffer, 1024);
 	close(fd);
-	system("rm your-output.txt difference.txt");
+
+	if (diffread == 0)
+	{
+		all_good();
+		return (0);
+	}
+	else
+	{
+		no_good();
+		write(STDOUT_FILENO, &buffer, diffread);
+		return (1);
+	}
+
+}
+
+int check_ls(void)
+{
+	int fd;
+	char buffer[1024];
+	ssize_t diffread;
+
+	system("echo \"/bin/ls\" | ./hsh > your.txt");
+	system("echo \"/bin/ls\" | sh > expected.txt");
+
+	system("diff your.txt expected.txt > difference.txt");
+
+	fd = open("difference.txt", O_RDONLY);
+	diffread = read(fd, &buffer, 1024);
+	close(fd);
 
 	if (diffread == 0)
 	{

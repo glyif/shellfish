@@ -9,4 +9,5 @@
 #define ANSI_COLOR_RESET   "\x1b[0m"
 int check_readme(void);
 int _compiler(void);
+int check_ls(void);
 #endif

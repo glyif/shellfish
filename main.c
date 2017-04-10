@@ -5,7 +5,8 @@ int main(int argc, char **argv)
 	int i, j;
 	int task;
 	tasks_t assignment[] = {
-		{ 0, check_readme}, {1, _compiler},
+		{0, check_readme}, {1, _compiler},
+		{2, check_ls},
 		{99, NULL}
 	};
 

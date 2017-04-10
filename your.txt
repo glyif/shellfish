@@ -1,0 +1,15 @@
+base_struct.h
+difference.txt
+expected.txt
+gcc--version.txt
+header.h
+helper.c
+hsh
+main.c
+Makefile
+mandatory.c
+output.c
+README.md
+shellfish
+tasks.h
+your.txt
