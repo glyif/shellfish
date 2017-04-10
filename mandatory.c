@@ -62,7 +62,28 @@ int check_ls(void)
 	if (diffread == 0)
 	{
 		all_good();
-		return (0);
+		print_check(2);
+
+		system("cat test_ls_2 | ./hsh > your.txt");
+		system("cat test_ls_2 | sh > expected.txt");
+
+		system("diff your.txt expected.txt > difference.txt");
+
+		fd = open("difference.txt", O_RDONLY);
+		diffread = read(fd, &buffer, 1024);
+		close(fd);
+
+		if (diffread == 0)
+		{
+			all_good();
+			return (0);
+		}
+		else
+		{
+			no_good();
+			write(STDOUT_FILENO, &buffer, diffread);
+			return (1);
+		}
 	}
 	else
 	{
