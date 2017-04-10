@@ -13,7 +13,6 @@ README.md
 shellfish
 tasks.h
 test_ls_2
-test_ls_2~
 your.txt
 base_struct.h
 difference.txt
@@ -30,5 +29,4 @@ README.md
 shellfish
 tasks.h
 test_ls_2
-test_ls_2~
 your.txt
