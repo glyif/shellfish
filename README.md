@@ -28,10 +28,13 @@ You can specify which tasks you would like to check.
 ```bash
 $ shellfish 0 1 2 3
 ```
+If you do not specify, shellfish will run all checks
 
 ## Updating
-If you do not specify, shellfish will run all of the checks.
-
 To update the tests, we've built-in an update command that will pull the repo again, and run install again, and removes itself.
+
+```bash
+$ shellfish update
+```
 
 ### Please look into the code before you use it!
