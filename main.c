@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 		{99, NULL}
 	};
 
-	system("touch your.txt expected.txt differenc.txt");
+	system("touch your.txt expected.txt difference.txt");
 
 	if (argc == 1)
 	{
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 			}
 		}
 
-	system("rm your.txt expected.txt differenc.txt");
+	system("rm your.txt expected.txt difference.txt");
 
 	return (0);
 }
