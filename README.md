@@ -9,14 +9,32 @@ Project Shellfish is an automated task checker for Holberton School's 0x15. C - 
 ## File Breakdown
 
 ## Using
-1) Compile the project
+1) Install Shellfish
 ```bash
-make all
+$ chmod u+x install.sh
+$ sudo ./install.sh
 ```
 
-2) Run `./shellfish`
+We are using sudo, so be sure you know what you are doing first! Don't trust us, look in the code!
+
+
+2) Run `shellfish` in your simple shell project directory
 ```bash
-./shellfish
+$ pwd
+/julienbarbier/bobbyiscool/simple-shell
+$ shellfish
+```
+You can specify which tasks you would like to check.
+```bash
+$ shellfish 0 1 2 3
+```
+If you do not specify, shellfish will run all checks
+
+## Updating
+To update the tests, we've built-in an update command that will pull the repo again, and run install again, and removes itself.
+
+```bash
+$ shellfish update
 ```
 
-You can specify what tasks you want to check, not specifying will check all
+### Please look into the code before you use it!
