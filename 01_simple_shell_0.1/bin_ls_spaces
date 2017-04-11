@@ -16,6 +16,7 @@ rm -f $tmp_file
 touch $tmp_file
 # send commands
 echo "$command" | $SHELL > $OUTPUTFILE 2> /dev/null &
+echo "$command" | sh > $tmp_file
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS
@@ -31,4 +32,3 @@ fi
 # clean up
 stop_shell
 rm -f $tmp_file
-    

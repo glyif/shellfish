@@ -1,9 +1,5 @@
-language: c
-
-dist: trusty
+language: bash
 
 sudo: false
 
-compiler: gcc
-
-script: "make all"
+script: "gcc --version"

@@ -12,7 +12,8 @@ rm -f $tmp_file
 # create a pseudo random file
 touch $tmp_file
 # run command
-echo "$command" | $SHELL > $OUTPUTFILE 2> /dev/null &
+echo "$command" | $SHELL > $OUTPUTFILE
+echo "$command" | sh > $tmp_file
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS

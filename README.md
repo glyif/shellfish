@@ -8,34 +8,33 @@ Project Shellfish is an automated task checker for Holberton School's 0x15. C - 
 ## File Breakdown
 
 ## Update
-Be sure to pull the latest updates from gitub
+
+Be sure to pull the latest updates from gitub manually or with the update
+script with the script: ``./update``
 
 ## Configuration
 
-Open the file `config` and update the variable `SHELL` with your shell.
+#### automatic
 
-## Installation
+possible script to compile entire program and copy shell into repo root dir
 
-Usage `./check_simple_shell.bash`
+#### manually
+
+copy compiled file to root of shellfish. Ensure that the below file is accurate.
+change `/config` file by updating the variable `SHELL` with your shell.
+for example this variable & path need to match w/ your environment:
+`SHELL="./hsh"`
 
 ## Usage
-1) Install Shellfish
-```bash
-$ chmod u+x install.sh
-$ sudo ./install.sh
-```
 
-We are using sudo, so be sure you know what you are doing first! Don't trust us, look in the code!
-
-## Updating
-
-```bash
-$ shellfish update
-```
+`./check_simple_shell.bash`
 
 ### Please look into the code before you use it!
 
+We are using sudo, so be sure you know what you are doing first! Don't trust us, look in the code!
+
 ### Authors:
+
 Julien Barbier: julien@holbertonschool.com  
 Bobby Yang: 122@holbertonschool.com  
 David John Coleman II: lcsw@davidjohncoleman.com
