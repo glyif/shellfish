@@ -1,9 +1,12 @@
-# Simple Shell, Checks
+<img src="https://www.holbertonschool.com/assets/holberton-logo-1cc451260ca3cd297def53f2250a9794810667c7ca7b5fa5879a569a457bf16f.png" alt="Holberton logo">
 
-There will be no checks released before the deadline. We **strongly** encourage the whole class to work together and create a suite of checks covering both regular tests and edged cases for each task.
+# Project Shellfish
+## Author: Bobby Yang (Batch 2)
 
-Here is an example on how to check your shell.
-Fork this repo and add more checks to help you and the rest of the class build the best simple shell possible.
+## Synopsis
+Project Shellfish is an automated task checker for Holberton School's 0x15. C - Simple Shell project.
+
+## File Breakdown
 
 ## Configuration
 
@@ -12,3 +15,21 @@ Open the file `config` and update the variable `SHELL` with your shell.
 ## Run
 
 Usage `./check_simple_shell.bash`
+
+## Using
+1) Install Shellfish
+```bash
+$ chmod u+x install.sh
+$ sudo ./install.sh
+```
+
+We are using sudo, so be sure you know what you are doing first! Don't trust us, look in the code!
+
+## Updating
+To update the tests, we've built-in an update command that will pull the repo again, and run install again, and removes itself.
+
+```bash
+$ shellfish update
+```
+
+### Please look into the code before you use it!
