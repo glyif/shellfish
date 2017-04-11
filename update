@@ -1,0 +1,4 @@
+#!/bin/bash
+git remote set-url origin https://github.com/glyif/shellfish.git
+git fetch origin master
+git reset --hard origin master
