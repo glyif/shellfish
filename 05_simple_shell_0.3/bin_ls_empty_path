@@ -27,12 +27,11 @@ $SLEEP $SLEEPSECONDS
 cat $ERROROUTPUTFILE
 
 # check the result
-diff $OUTPUTFILE $EXPECTED > $DIFF
-if [ -s $DIFF ]; then
-	print_ko
-	cat $DIFF
+nmatch=`$CAT $OUTPUTFILE | $GREP -c "$tmp_file"`
+if [ $nmatch -eq 1 ]; then
+    print_ok
 else
-	print_ok
+    print_ko
 fi
 
 # clean up
