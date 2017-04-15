@@ -2,6 +2,8 @@
 
 # Project Shellfish
 
+# READ EVERYTHING BEFORE USING
+
 ## Synopsis
 Project Shellfish is an automated task checker for Holberton School's 0x15. C - Simple Shell project.
 
@@ -9,27 +11,20 @@ Project Shellfish is an automated task checker for Holberton School's 0x15. C - 
 
 ## Update
 
-Be sure to pull the latest updates from gitub manually or with the update
-script with the script: ``./update``
-
 ## Configuration
+To get started all you need to do is run the `init.sh` script.
+```bash
+$ ./init.sh
+```
+If it is your first time, it will prompt you for your github username. This will be used to pull your `simple_shell` into the project to check.
 
-#### automatic
-
-possible script to compile entire program and copy shell into repo root dir
-
-#### manually
-
-copy compiled file to root of shellfish. Ensure that the below file is accurate.
-change `/config` file by updating the variable `SHELL` with your shell.
-for example this variable & path need to match w/ your environment:
-`SHELL="./hsh"`
+NOTE: If the project is on your partner's github account, make sure to use your partner's github name.
 
 ## Usage
 
 `./check_simple_shell.bash`
 
-### Please look into the code before you use it!
+# Please look into the code before you use it!
 
 We are using sudo, so be sure you know what you are doing first! Don't trust us, look in the code!
 
