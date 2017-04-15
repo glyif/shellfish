@@ -26,11 +26,11 @@ echo "$command" | sh > $EXPECTED 2> $ERROREXPECTED
 # wait a little bit
 $SLEEP $SLEEPSECONDS
 
-#error
-print_error
-
 # check the result
 check_diff
+
+#error
+print_error
 
 # clean up
 stop_shell
