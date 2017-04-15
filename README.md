@@ -21,8 +21,9 @@ If it is your first time, it will prompt you for your github username. This will
 NOTE: If the project is on your partner's github account, make sure to use your partner's github name.
 
 ## Usage
-
-`./check_simple_shell.bash`
+```bash
+$ ./check_simple_shell.bash
+```
 
 # Please look into the code before you use it!
 
