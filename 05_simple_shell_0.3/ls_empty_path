@@ -25,6 +25,9 @@ PATH="$OLDPATH"
 # wait a little bit
 $SLEEP $SLEEPSECONDS
 
+# error
+print_error
+
 # check the result
 nmatch=`$CAT $OUTPUTFILE | $GREP -c "$tmp_file"`
 if [ $nmatch -eq 0 ]; then
