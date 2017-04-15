@@ -116,23 +116,37 @@ source config
 echo -ne "\033[34m"
 echo "     *************************************"
 echo "     ***                               ***"
-echo "     ***     Beginning Test Suite      ***"
-echo "     ***      Please be patient        ***"
-echo "     ***     ...and know the code      ***"
+echo -n "     ***     "
+echo -ne "\033[32m"
+echo -n "Beginning Test Suite      "
+echo -ne "\033[34m"
+echo "***"
+echo -n "     ***      "
+echo -ne "\033[35m"
+echo -n "Please be patient        "
+echo -ne "\033[34m"
+echo "***"
+echo -n "     ***     "
+echo -ne "\033[36m"
+echo -n "...and know the code      "
+echo -ne "\033[34m"
+echo "***"
 echo "     ***                               ***"
 echo "     *************************************"
 echo ""
+echo -ne "\033[30m"
 echo "contributors:"
-cat AUTHORS | tail -n +3
+cat AUTHORS | tail -n +2
 echo ""
 
 # Prompt to check to continue
 echo -ne "\033[31m"
-echo "type 'y' or 'Y' & click enter to continue, or"
-read -p "type anything else to quit: " choice
+echo "type 'y' or 'Y' & click 'enter' to continue"
+echo "(ensure you have the most updated checker)"
+read -p "type anything, plus 'enter' to quit: " choice
 case "$choice" in
-  y|Y ) echo "yes";;
-  * ) exit 1;;
+  y|Y ) echo "";;
+  * ) echo -ne "\033[30m" && exit 1;;
 esac
 
 # Cleanup
@@ -157,5 +171,5 @@ done
 rm -f $LTRACEOUTPUTFILE
 rm -f checker_tmp_file_*
 rm -f /tmp/.checker_tmp_file_*
-rm -f > $OUTPUTFILE $EXPECTED $DIFF $ERROROUTPUTFILE $ERROREXPECTED
+rm -f $OUTPUTFILE $EXPECTED $DIFF $ERROROUTPUTFILE $ERROREXPECTED
 echo -ne "\033[30m"
