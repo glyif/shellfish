@@ -47,15 +47,41 @@ function stop_shell()
     if [ `pidof $SHELL | wc -l` -ne 0 ]; then
 	   killall -9 $SHELL 2>&1 > /dev/null
     fi
-    rm -f $OUTPUTFILE $ERROROUTPUTFILE $LTRACEOUTPUTFILE
+	> $OUTPUTFILE && > $EXPECTED && > $DIFF && > $ERROROUTPUTFILE
+	rm -f $LTRACEOUTPUTFILE
+	rm -f checker_tmp_file_*
 }
 
 # Load configuration
 source config
 
+# Introduction
+echo -ne "\033[30m"
+echo "     *************************************"
+echo "     ***                               ***"
+echo "     ***     Beginning Test Suite      ***"
+echo "     ***      Please be patient        ***"
+echo "     ***     ...and know the code      ***"
+echo "     ***                               ***"
+echo "     *************************************"
+echo ""
+echo "contributors:"
+cat AUTHORS | tail -n +3
+echo ""
+
+# Prompt to check to continue
+echo "type 'y' or 'Y' & click enter to continue, or"
+read -p "type anything else to quit: " choice
+case "$choice" in
+  y|Y ) echo "yes";;
+  * ) exit 1;;
+esac
+
 # Cleanup
 echo -ne "\033[37m"
-rm -f $OUTPUTFILE $LTRACEOUTPUTFILE
+> $OUTPUTFILE && > $EXPECTED && > $DIFF && > $ERROROUTPUTFILE
+rm -f $LTRACEOUTPUTFILE
+rm -f checker_tmp_file_*
 
 # Locates all tests and launch them
 for dir in `ls -d "$TESTDIR"/*/`
@@ -69,8 +95,8 @@ do
 done
 
 # Cleanup
-rm -f $OUTPUTFILE $LTRACEOUTPUTFILE $ERROROUTPUTFILE
-rm -f checker_output_*
+> $OUTPUTFILE && > $EXPECTED && > $DIFF && > $ERROROUTPUTFILE
+rm -f $LTRACEOUTPUTFILE
 rm -f checker_tmp_file_*
 rm -f /tmp/.checker_tmp_file_*
-echo -ne "\033[37m"
+echo -ne "\033[30m"

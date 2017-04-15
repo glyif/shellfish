@@ -14,18 +14,21 @@ rm -f $tmp_filepath
 # create a pseudo random file
 touch $tmp_filepath
 chmod 761 $tmp_filepath
+
 # send commands
-echo "$command" | $SHELL > $OUTPUTFILE 2> /dev/null &
+echo "$command" | $SHELL > $OUTPUTFILE
+echo "$command" | sh > $EXPECTED
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS
 
 # check the result
-nmatch=`cat "$OUTPUTFILE" | grep "$tmp_file" | grep -c "rwxrw---x"`
-if [ $nmatch -eq 1 ]; then
-	   print_ok
+diff $OUTPUTFILE $EXPECTED > $DIFF
+if [ -s $DIFF ]; then
+	print_ko
+	cat $DIFF
 else
-	   print_ko
+	print_ok
 fi
 
 # clean up

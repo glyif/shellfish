@@ -2,10 +2,11 @@
 
 TESTDIR="."
 R=$RANDOM
-OUTPUTFILE="checker_output_$R"
-ERROROUTPUTFILE="checker_error_output_$R"
+OUTPUTFILE="zyouroutput.txt"
+EXPECTED="zexpected.txt"
+DIFF="zdiff.txt"
+ERROROUTPUTFILE="zerror.txt"
 SHELL="./hsh"
-#SHELL="/bin/sh"
 SLEEP=`which sleep`
 SLEEPSECONDS=1
 LTRACE=`which ltrace`

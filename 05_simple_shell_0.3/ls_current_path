@@ -7,13 +7,14 @@ tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
 stop_shell
-rm -f $tmp_file
 
 # create a pseudo random file
 touch $tmp_file
+
 # empty PATH
 OLDPATH="$PATH"
 PATH=":$PATH"
+
 # send commands
 $ECHO "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
 
@@ -33,4 +34,3 @@ fi
 
 # clean up
 stop_shell
-$RM -f $tmp_file

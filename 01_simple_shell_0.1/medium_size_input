@@ -7,25 +7,25 @@ tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
 stop_shell
-rm -f $tmp_file
 
 # create a pseudo random file
 touch $tmp_file
-# send commands
-echo "$command" | $SHELL > $OUTPUTFILE 2> /dev/null &
-echo "$command" | sh > $tmp_file
+
+# run command
+echo "$command" | $SHELL > $OUTPUTFILE
+echo "$command" | sh > $EXPECTED
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS
 
 # check the result
-nmatch=`cat $OUTPUTFILE | grep -c "$tmp_file"`
-if [ $nmatch -eq 1 ]; then
-	   print_ok
+diff $OUTPUTFILE $EXPECTED > $DIFF
+if [ -s $DIFF ]; then
+	print_ko
+	cat $DIFF
 else
-	   print_ko
+	print_ok
 fi
 
 # clean up
 stop_shell
-rm -f $tmp_file

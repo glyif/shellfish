@@ -8,7 +8,6 @@ command="/bin/ls
 
 # clean up
 stop_shell
-rm -f $tmp_file
 
 # send commands
 echo "$command" | $LTRACE -bc -o $LTRACEOUTPUTFILE $SHELL > $OUTPUTFILE 2> /dev/null &
@@ -26,4 +25,3 @@ fi
 
 # clean up
 stop_shell
-rm -f $tmp_file
