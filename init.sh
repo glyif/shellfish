@@ -25,3 +25,6 @@ cp hsh ..
 
 #goes back into root
 cd ../
+
+#removes src
+rm -rf src
