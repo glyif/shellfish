@@ -7,15 +7,16 @@ tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
 stop_shell
-rm -f $tmp_file
 
 # create a pseudo random file
 touch $tmp_file
 # empty PATH
 OLDPATH="$PATH"
 PATH=""
-# send commands
-$ECHO "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
+
+# run command
+echo "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
+echo "$command" | sh > $EXPECTED
 
 # put PATH back
 PATH="$OLDPATH"
@@ -26,13 +27,13 @@ $SLEEP $SLEEPSECONDS
 cat $ERROROUTPUTFILE
 
 # check the result
-nmatch=`$CAT $OUTPUTFILE | $GREP -c "$tmp_file"`
-if [ $nmatch -eq 1 ]; then
-    print_ok
+diff $OUTPUTFILE $EXPECTED > $DIFF
+if [ -s $DIFF ]; then
+	print_ko
+	cat $DIFF
 else
-    print_ko
+	print_ok
 fi
 
 # clean up
 stop_shell
-$RM -f $tmp_file

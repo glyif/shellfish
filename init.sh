@@ -5,7 +5,7 @@ DIRECTORY=src
 
 if [ -z "$GITHUBUSR" ]
 then
-	echo -e 'Enter your GitHub username: \n'
+	echo -e 'Enter the GitHub username where your shell is hosted: \n'
 	read GITHUBUSR
 	echo "GITHUBUSR=$GITHUBUSR" >> $CONFIG
 fi
