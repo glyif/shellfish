@@ -19,13 +19,7 @@ echo "$command" | sh > $EXPECTED
 $SLEEP $SLEEPSECONDS
 
 # check the result
-diff $OUTPUTFILE $EXPECTED > $DIFF
-if [ -s $DIFF ]; then
-	print_ko
-	cat $DIFF
-else
-	print_ok
-fi
+check_diff
 
 # clean up
 stop_shell

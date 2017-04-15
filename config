@@ -6,6 +6,7 @@ OUTPUTFILE="zyouroutput.txt"
 EXPECTED="zexpected.txt"
 DIFF="zdiff.txt"
 ERROROUTPUTFILE="zerror.txt"
+ERROREXPECTED="zerrorexpected.txt"
 SHELL="./hsh"
 SLEEP=`which sleep`
 SLEEPSECONDS=1

@@ -17,6 +17,7 @@ PATH=":$PATH"
 
 # send commands
 $ECHO "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
+$ECHO "$command" | sh > $EXPECTED 2> $ERROREXPECTED
 
 # put PATH back
 PATH="$OLDPATH"
@@ -24,17 +25,11 @@ PATH="$OLDPATH"
 # wait a little bit
 $SLEEP $SLEEPSECONDS
 
+#error
+print_error
+
 # check the result
-nmatch=`$CAT $OUTPUTFILE | $GREP -c "$tmp_file"`
-if [ $nmatch -eq 0 ]; then
-    if [ `$CAT $ERROROUTPUTFILE | wc -c` -ge 5 ]; then
-	   print_ok
-    else
-	   print_ok
-    fi
-else
-    print_ko
-fi
+check_diff
 
 # clean up
 stop_shell
