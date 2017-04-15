@@ -45,15 +45,23 @@ function print_ok()
 function print_error()
 {
 	echo -ne "\033[31m"
-	if [ -s $ERROROUTPUTFILE ]; then
-		echo ""
-		echo "your error: " && cat $ERROROUTPUTFILE
-		echo ""
-	fi
-	if [ -s $ERROREXPECTED ]; then
-		echo ""
-		echo "expected error: " && cat $ERROREXPECTED
-		echo ""
+	if [[ -s $ERROROUTPUTFILE || -s $ERROREXPECTED ]]; then
+		if [ -s $ERROROUTPUTFILE ]; then
+		   echo ""
+		   echo "your error: "
+		   cat $ERROROUTPUTFILE
+		else
+			echo ""
+			echo "your shell has no error output"
+		fi
+		if [ -s $ERROREXPECTED ]; then
+			echo ""
+			echo "expected error: "
+			cat $ERROREXPECTED
+		else
+			echo ""
+			echo "there is no expected error"
+		fi
 	fi
 	echo -ne "\033[37m"
 }
@@ -75,7 +83,7 @@ function check_diff()
 	if [ -s $DIFF ]; then
 		print_ko
 		echo -ne "\033[30m"
-		echo "this is the difference between your output and the expected:"
+		echo "difference between your shell's output & expected output:"
 		echo -ne "\033[31m"
 		cat $DIFF
 		echo -ne "\033[37m"
