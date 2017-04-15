@@ -25,9 +25,13 @@ PATH="$OLDPATH"
 $SLEEP $SLEEPSECONDS
 
 # check the result
-res=`$CAT "$OUTPUTFILE"`
-if [ "$res" == "cisfun" ]; then
-    print_ok
+nmatch=`$CAT $OUTPUTFILE | $GREP -c "$tmp_file"`
+if [ $nmatch -eq 0 ]; then
+    if [ `$CAT $ERROROUTPUTFILE | wc -c` -ge 5 ]; then
+	   print_ok
+    else
+	   print_ok
+    fi
 else
     print_ko
 fi
