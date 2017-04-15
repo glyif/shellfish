@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# check if the getline function was used by using ltrace
+# check if the strlen function was used by using ltrace
 
 command="/bin/ls
 /bin/ls
@@ -16,7 +16,7 @@ echo "$command" | ltrace -bcf -o $LTRACEOUTPUTFILE $SHELL > $OUTPUTFILE 2> $ERRO
 $SLEEP $SLEEPSECONDS
 
 # check the result
-nmatch=`cat $LTRACEOUTPUTFILE | grep getline > $DIFF`
+nmatch=`cat $LTRACEOUTPUTFILE | grep strlen > $DIFF`
 check_function
 
 #errors

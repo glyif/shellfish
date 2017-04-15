@@ -10,7 +10,6 @@ ERROREXPECTED="zzzerrorexpected.txt"
 SHELL="./hsh"
 SLEEP=`which sleep`
 SLEEPSECONDS=1
-LTRACE=`which ltrace`
 LTRACEOUTPUTFILE="checker_ltrace_output_$R"
 ECHO=`which echo`
 CAT=`which cat`

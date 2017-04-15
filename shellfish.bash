@@ -47,20 +47,20 @@ function print_error()
 	echo -ne "\033[31m"
 	if [[ -s $ERROROUTPUTFILE || -s $ERROREXPECTED ]]; then
 		if [ -s $ERROROUTPUTFILE ]; then
-		   echo ""
 		   echo "your error: "
 		   cat $ERROROUTPUTFILE
 		else
-			echo ""
-			echo "your shell has no error output"
+			echo "************************************"
+			echo "** your shell has no error output **"
+			echo "************************************"
 		fi
 		if [ -s $ERROREXPECTED ]; then
-			echo ""
 			echo "expected error: "
 			cat $ERROREXPECTED
 		else
-			echo ""
-			echo "there is no expected error"
+			echo "********************************"
+			echo "** there is no expected error **"
+			echo "********************************"
 		fi
 	fi
 	echo -ne "\033[37m"
@@ -87,6 +87,32 @@ function check_diff()
 		echo -ne "\033[31m"
 		cat $DIFF
 		echo -ne "\033[37m"
+	else
+		print_ok
+	fi
+}
+
+#######################################
+# Checks for certain functions in your code
+# Globals:
+#   LTRACEOUTPUTFILE
+# Arguments:
+#   None
+# Returns:
+#   None
+#######################################
+function check_function()
+{
+	if [ -s $DIFF ]; then
+		print_ko
+		echo -ne "\033[30m"
+		echo "** ltrace returned these functions from your file:"
+		echo "% time     seconds  usecs/call     calls      function"
+		echo "------ ----------- ----------- --------- --------------------"
+		echo -ne "\033[31m"
+		cat $DIFF
+		echo -ne "\033[37m"
+		echo "------ ----------- ----------- --------- --------------------"
 	else
 		print_ok
 	fi
@@ -159,6 +185,8 @@ esac
 
 # Cleanup
 echo -ne "\033[37m"
+echo "    --------------------------------------"
+echo "    --------------------------------------"
 > $OUTPUTFILE && > $EXPECTED && > $DIFF && > $ERROROUTPUTFILE && > $ERROREXPECTED
 rm -f $LTRACEOUTPUTFILE
 rm -f checker_tmp_file_*
