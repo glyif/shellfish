@@ -17,3 +17,4 @@ WC=`which wc`
 RM=`which rm`
 TOUCH=`which touch`
 CHMOD=`which chmod`
+COMPILE="gcc -Wall -Werror -Wextra -pedantic *.c -o hsh"
