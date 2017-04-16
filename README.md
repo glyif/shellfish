@@ -53,18 +53,18 @@ directory, and your shell project directory will be deleted.
   reads: ``SHELL="./test_shell"``.  This will use a basic shell as a test
   instead of your shell.
 
-## Errors
-
-* your shell will not run with our init script if it does not compile with the
-above -Warning flags.  If your shell does not run in 'non-interactive' mode,
-(i.e. executed through a ``|`` [pipe]) properly you will not pass.  If your
-shell does not exactly replicate the output of ``sh`` you will not pass.
-
 ## Usage
 
 ```
 $ ./shellfish.bash
 ```
+
+## Errors
+
+your shell will not run with our init script if it does not compile with the
+above -Warning flags.  If your shell does not run in 'non-interactive' mode,
+(i.e. executed through a ``|`` [pipe]) properly you will not pass.  If your
+shell does not exactly replicate the output of ``sh`` you will not pass.
 
 ### Authors:
 
