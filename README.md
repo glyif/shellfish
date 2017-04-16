@@ -17,7 +17,7 @@ Be sure to update your checker with this script.  This script sets **shellfish**
 as your remote upstream, then resets your current branch to the most recent
 updates from **shellfish** master.  You can also do this manually.
 
-  **latest update:** *Sun Apr 16 04:28:53 UTC 2017*
+  **latest update:** *Sun Apr 16 05:05:11 UTC 2017*
 
 ```
 $ ./update
@@ -54,6 +54,10 @@ directory, and your shell project directory will be deleted.
 ```
 $ ./shellfish.bash
 ```
+
+**NOTE:** you can modify the config file so that the line ``SHELL`` reads:
+``SHELL="./test_shell"``.  This will use a basic shell as a test instead of
+your shell.
 
 ### Authors:
 

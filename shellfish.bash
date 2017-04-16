@@ -179,6 +179,7 @@ echo ""
 echo -ne "\033[31m"
 echo "type 'y' or 'Y' & click 'enter' to continue"
 echo "(ensure you have the most updated checker)"
+echo ""
 read -p "type anything, plus 'enter' to quit: " choice
 case "$choice" in
   y|Y ) echo "";;
