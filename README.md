@@ -56,9 +56,9 @@ directory, and your shell project directory will be deleted.
 ## Errors
 
 * your shell will not run with our init script if it does not compile with the
-above warnings.  If your shell does not run in 'non-interactive' mode,
-(i.e. executed through a ``|`` [pipe]) properly with proper output you will also
-likely fail all checks.
+above -Warning flags.  If your shell does not run in 'non-interactive' mode,
+(i.e. executed through a ``|`` [pipe]) properly you will not pass.  If your
+shell does not exactly replicate the output of ``sh`` you will not pass.
 
 ## Usage
 
