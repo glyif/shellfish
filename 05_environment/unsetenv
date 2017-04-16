@@ -1,10 +1,11 @@
 #!/bin/bash
 #
-# run /bin/ls 3 times
+# Can you unset env?
 
-command="/bin/ls
-/bin/ls
-/bin/ls"
+command="setenv AUSTIN KeepAustinWeird
+env
+unsetenv AUSTIN
+env"
 tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
@@ -14,8 +15,9 @@ stop_shell
 touch $tmp_file
 
 # run command
-echo "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
-echo "$command" | sh > $EXPECTED
+echo "$command" | $SHELL > $tmp_file 2> $ERROROUTPUTFILE &
+cat $tmp_file | grep AUSTIN=KeepAustinWeird > $OUTPUTFILE
+> $EXPECTED
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS
@@ -23,7 +25,7 @@ $SLEEP $SLEEPSECONDS
 # check the result
 check_diff
 
-# print error
+# error
 print_error
 
 # clean up

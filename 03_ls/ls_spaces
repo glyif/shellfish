@@ -1,18 +1,22 @@
 #!/bin/bash
 #
-# simple test with ls to check if the shell can find ls in the PATH
+# run ls with spaces everywhere
 
-command="ls"
+command="ls
+     ls
+ls     
+ ls     "
 tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
 stop_shell
+rm -f $tmp_file
 
 # create a pseudo random file
 touch $tmp_file
 
 # run command
-echo "$command" | $SHELL > $OUTPUTFILE
+echo "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
 echo "$command" | sh > $EXPECTED
 
 # wait a little bit
@@ -20,6 +24,9 @@ $SLEEP $SLEEPSECONDS
 
 # check the result
 check_diff
+
+# print error
+print_error
 
 # clean up
 stop_shell

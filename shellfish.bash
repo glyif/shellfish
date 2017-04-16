@@ -13,7 +13,7 @@
 #######################################
 function print_ko()
 {
-    echo -e "[\033[31mKO\033[37m]"
+    echo -e "[\033[31mFAIL\033[37m]"
 }
 
 #######################################
@@ -27,7 +27,7 @@ function print_ko()
 #######################################
 function print_ok()
 {
-    echo -e "[\033[32mOK\033[37m]"
+    echo -e "[\033[32mPASS\033[37m]"
 }
 
 #######################################
@@ -83,8 +83,8 @@ function check_diff()
 	if [ -s $DIFF ]; then
 		print_ko
 		echo -ne "\033[30m"
-		echo "---------------------------------------------------------"
-		echo "difference between your shell's output & expected output:"
+		echo "--------------------!outputs differ!---------------------"
+		echo "          your shell '<' -- expected output '>'"
 		echo "---------------------------------------------------------"
 		echo -ne "\033[31m"
 		cat $DIFF

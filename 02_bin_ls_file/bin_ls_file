@@ -1,21 +1,18 @@
 #!/bin/bash
 #
-# run /bin/ls 3 times
-
-command="/bin/ls
-/bin/ls
-/bin/ls"
+# test simple command /bin/ls through file
+command="/bin/ls"
 tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
 stop_shell
 
 # create a pseudo random file
-touch $tmp_file
+echo "$command" > $tmp_file
 
 # run command
-echo "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
-echo "$command" | sh > $EXPECTED
+cat $tmp_file | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
+cat $tmp_file | sh > $EXPECTED
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS

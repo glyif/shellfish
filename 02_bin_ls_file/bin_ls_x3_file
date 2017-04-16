@@ -1,29 +1,30 @@
 #!/bin/bash
 #
-# run ls with spaces everywhere
+# run /bin/ls 3 times
 
-command="ls
-     ls
-ls     
- ls     "
+command="/bin/ls
+/bin/ls
+/bin/ls"
 tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
 stop_shell
-rm -f $tmp_file
 
 # create a pseudo random file
-touch $tmp_file
+echo "$command" > $tmp_file
 
 # run command
-echo "$command" | $SHELL > $OUTPUTFILE
-echo "$command" | sh > $EXPECTED
+cat $tmp_file | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
+cat $tmp_file | sh > $EXPECTED
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS
 
 # check the result
 check_diff
+
+# print error
+print_error
 
 # clean up
 stop_shell

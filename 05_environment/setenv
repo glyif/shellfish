@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Can you set env?
+
+command="setenv CHICAGO 26thStreetLaVillitaRealMagMile
+env"
+tmp_file="checker_tmp_file_$RANDOM"
+
+# clean up
+stop_shell
+
+# create a pseudo random file
+touch $tmp_file
+
+# run command
+echo "$command" | $SHELL > $tmp_file
+cat $tmp_file | grep CHICAGO=26thStreetLaVillitaRealMagMile > $OUTPUTFILE 2> $ERROROUTPUTFILE &
+echo "CHICAGO=26thStreetLaVillitaRealMagMile" > $EXPECTED
+
+# wait a little bit
+$SLEEP $SLEEPSECONDS
+
+# check the result
+check_diff
+
+# error
+print_error
+
+# clean up
+stop_shell

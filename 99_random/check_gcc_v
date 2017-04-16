@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# tests gcc version
+command="gcc --version"
+
+# clean up
+stop_shell
+
+# create a pseudo random file
+touch $tmp_file
+
+# run command
+$command > $tmp_file
+cat $tmp_file | grep 4.8.4-2ubuntu1~14.04.3 > $OUTPUTFILE
+echo "gcc (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4" > $EXPECTED
+
+# wait a little bit
+$SLEEP $SLEEPSECONDS
+
+# check the result
+check_diff
+
+# clean up
+stop_shell
