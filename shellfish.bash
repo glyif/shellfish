@@ -83,7 +83,9 @@ function check_diff()
 	if [ -s $DIFF ]; then
 		print_ko
 		echo -ne "\033[30m"
+		echo "---------------------------------------------------------"
 		echo "difference between your shell's output & expected output:"
+		echo "---------------------------------------------------------"
 		echo -ne "\033[31m"
 		cat $DIFF
 		echo -ne "\033[37m"
