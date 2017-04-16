@@ -11,32 +11,40 @@ Simple Shell project.
 ## File Breakdown
 
 ## Update
-Be sure to update your checker with this script.  This script sets Shellfish as
-your remote upstream, then resets your current branch to the most recent updates
-from Shellfish master.  You can also do this manually.
-```
-$ ./update
-```
+Be sure to update your checker with this script.  This script sets **shellfish**
+as your remote upstream, then resets your current branch to the most recent
+updates from **shellfish** master.  You can also do this manually.
+
+```$ ./update```
+
 ## Configuration
 To get started all you need to do is run the `init.sh` script.
-```
-$ ./init.sh
-```
-If it is your first time, it will prompt you for your github username. This will
-be used to pull your `simple_shell` into the project to check.
 
-NOTE: If the project is on your partner's github account, make sure to use your
-partner's github name.
+```$ ./init.sh```
+
+* if it is your first time, you will be prompted for your github username. This
+will be used to clone a copy of your `simple_shell` into a sub directory.
+
+  * **NOTE:** If the project is on your partner's github account, make sure to
+  use your partner's github name.
+
+* your project will be compiled with the proper commands:
+
+  ```gcc -Wall -Werror -Wextra -pedantic *.c -o hsh```
+
+* then your shell (``hsh`` file) will be copied into the **shellfish**
+directory, and your shell project directory will be deleted.
+
+  * **NOTE:** these steps can be bypassed if you copy your shell into the
+  directory for the **shellfish** checker.  If you bypass these steps, be sure
+  to properly compile your code.
 
 ## Usage
-```bash
-$ ./shellfish.bash
-```
+```$ ./shellfish.bash```
 
-# Please look into the code before you use it!
-
-We are using sudo, so be sure you know what you are doing first! Don't trust us,
-look in the code!
+## RTFM
+**Please look into the code before you use it!**  We are using sudo, so be sure
+you know what you are doing first! Don't trust us; look in the code!
 
 ### Authors:
 
