@@ -2,11 +2,11 @@
 
 TESTDIR="."
 R=$RANDOM
-OUTPUTFILE="zzzyouroutput.txt"
-EXPECTED="zzzexpected.txt"
-DIFF="zzzdiff.txt"
-ERROROUTPUTFILE="zzzerror.txt"
-ERROREXPECTED="zzzerrorexpected.txt"
+OUTPUTFILE="youroutput.txt"
+EXPECTED="expected.txt"
+DIFF="diff.txt"
+ERROROUTPUTFILE="error.txt"
+ERROREXPECTED="errorexpected.txt"
 SHELL="./hsh"
 SLEEP=`which sleep`
 SLEEPSECONDS=1
