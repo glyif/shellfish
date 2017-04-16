@@ -17,13 +17,12 @@ Be sure to update your checker with this script.  This script sets **shellfish**
 as your remote upstream, then resets your current branch to the most recent
 updates from **shellfish** master.  You can also do this manually.
 
-  **latest update:** *Sun Apr 16 05:05:11 UTC 2017*
-
 ```
 $ ./update
 ```
 
 ## Configuration
+
 To get started all you need to do is run the `init.sh` script.
 
 ```
@@ -36,7 +35,8 @@ will be used to clone a copy of your `simple_shell` into a sub directory.
   * **NOTE:** If the project is on your partner's github account, make sure to
   use your partner's github name.
 
-* your project will be compiled with the proper commands:
+* your project will be compiled with gcc and these Warning flags in the output
+file: ``hsh``.
 
   ```
   $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
@@ -45,19 +45,26 @@ will be used to clone a copy of your `simple_shell` into a sub directory.
 * then your shell (``hsh`` file) will be copied into the **shellfish**
 directory, and your shell project directory will be deleted.
 
-  * **NOTE:** these steps can be bypassed if you copy your shell into the
-  directory for the **shellfish** checker.  If you bypass these steps, be sure
-  to properly compile your code.
+  * **Bypass compiliation:** these steps can be bypassed if you copy your shell
+  into the directory for the **shellfish** checker.  If you bypass these steps,
+  be sure to properly compile your code.
+
+  * **test_shell:** you can modify the config file so that the line ``SHELL``
+  reads: ``SHELL="./test_shell"``.  This will use a basic shell as a test
+  instead of your shell.
+
+## Errors
+
+* your shell will not run with our init script if it does not compile with the
+above warnings.  If your shell does not run in 'non-interactive' mode,
+(i.e. executed through a ``|`` [pipe]) properly with proper output you will also
+likely fail all checks.
 
 ## Usage
 
 ```
 $ ./shellfish.bash
 ```
-
-**NOTE:** you can modify the config file so that the line ``SHELL`` reads:
-``SHELL="./test_shell"``.  This will use a basic shell as a test instead of
-your shell.
 
 ### Authors:
 
