@@ -2,11 +2,16 @@
 
 # Project Shellfish
 
-# READ EVERYTHING BEFORE USING
+## RTFM
+**Please look into the code before you use it!**  We are using sudo, so be sure
+you know what you are doing first! Don't trust us; look in the code!
 
 ## Synopsis
 Project Shellfish is an automated task checker for Holberton School's 0x15. C -
 Simple Shell project.
+
+#### Update
+ **latest update:** *Sun Apr 16 04:23:13 UTC 2017*
 
 ## File Breakdown
 
@@ -50,10 +55,6 @@ directory, and your shell project directory will be deleted.
 ```
 $ ./shellfish.bash
 ```
-
-## RTFM
-**Please look into the code before you use it!**  We are using sudo, so be sure
-you know what you are doing first! Don't trust us; look in the code!
 
 ### Authors:
 
