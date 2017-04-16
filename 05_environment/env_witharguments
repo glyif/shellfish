@@ -1,21 +1,15 @@
 #!/bin/bash
 #
-# run /bin/ls 3 times
+# env with random args
 
-command="/bin/ls
-/bin/ls
-/bin/ls"
-tmp_file="checker_tmp_file_$RANDOM"
+command="env echo baba ganoush"
 
 # clean up
 stop_shell
 
-# create a pseudo random file
-touch $tmp_file
-
 # run command
 echo "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
-echo "$command" | sh > $EXPECTED
+$command > $EXPECTED 2> $ERROREXPECTED
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS
@@ -23,7 +17,7 @@ $SLEEP $SLEEPSECONDS
 # check the result
 check_diff
 
-# print error
+# error
 print_error
 
 # clean up

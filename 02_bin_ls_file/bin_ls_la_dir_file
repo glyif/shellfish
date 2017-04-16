@@ -2,10 +2,11 @@
 #
 # run ls with arguments
 
-tmp_file=".checker_tmp_file_$RANDOM"
+tmp_file="checker_tmp_file_$RANDOM"
 tmp_filedir="/tmp"
 tmp_filepath="$tmp_filedir/$tmp_file"
 command="/bin/ls -la $tmp_filedir/"
+tmp_file_command="checker_tmp_file_$RANDOM"
 
 # clean up
 stop_shell
@@ -14,10 +15,11 @@ rm -f $tmp_filepath
 # create a pseudo random file
 touch $tmp_filepath
 chmod 761 $tmp_filepath
+echo "$command" > $tmp_file_command
 
 # send commands
-echo "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
-echo "$command" | sh > $EXPECTED
+cat $tmp_file_command | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
+cat $tmp_file_command | sh > $EXPECTED
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS
