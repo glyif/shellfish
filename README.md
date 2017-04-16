@@ -16,6 +16,7 @@ Simple Shell project.
 Be sure to update your checker with this script.  This script sets **shellfish**
 as your remote upstream, then resets your current branch to the most recent
 updates from **shellfish** master.  You can also do this manually.
+
   **latest update:** *Sun Apr 16 04:28:53 UTC 2017*
 
 ```
