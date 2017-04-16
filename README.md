@@ -15,12 +15,16 @@ Be sure to update your checker with this script.  This script sets **shellfish**
 as your remote upstream, then resets your current branch to the most recent
 updates from **shellfish** master.  You can also do this manually.
 
-```$ ./update```
+```
+$ ./update
+```
 
 ## Configuration
 To get started all you need to do is run the `init.sh` script.
 
-```$ ./init.sh```
+```
+$ ./init.sh
+```
 
 * if it is your first time, you will be prompted for your github username. This
 will be used to clone a copy of your `simple_shell` into a sub directory.
@@ -30,7 +34,9 @@ will be used to clone a copy of your `simple_shell` into a sub directory.
 
 * your project will be compiled with the proper commands:
 
-  ```gcc -Wall -Werror -Wextra -pedantic *.c -o hsh```
+  ```
+  $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+  ```
 
 * then your shell (``hsh`` file) will be copied into the **shellfish**
 directory, and your shell project directory will be deleted.
@@ -40,7 +46,10 @@ directory, and your shell project directory will be deleted.
   to properly compile your code.
 
 ## Usage
-```$ ./shellfish.bash```
+
+```
+$ ./shellfish.bash
+```
 
 ## RTFM
 **Please look into the code before you use it!**  We are using sudo, so be sure
