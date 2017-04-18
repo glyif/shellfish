@@ -11,8 +11,8 @@ stop_shell
 
 # send commands
 echo "$command" | $SHELL 2> $ERROROUTPUTFILE &
-echo $? > $OUTPUTFILE
-echo 98 > $EXPECTED
+echo "$?" > $OUTPUTFILE
+echo "98" > $EXPECTED
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS
