@@ -49,8 +49,8 @@ After initial build, you will not need to run the build again unless there's an 
 
 ### Manual build
 ```bash
-$ git clone https://github.com/glyif/docker-shellfish.git
-$ cd docker-shellfish.git
+$ git clone https://github.com/glyif/shellfish.git
+$ cd shellfish
 $ docker build .
 
 # Copy the last ID, which will be something like Successfully built ________
