@@ -175,6 +175,7 @@ echo "contributors:"
 cat AUTHORS | tail -n +2
 echo ""
 
+# Cleanup
 echo -ne "\033[37m"
 echo "    --------------------------------------"
 echo "    --------------------------------------"
@@ -183,13 +184,15 @@ rm -f $LTRACEOUTPUTFILE
 rm -f checker_tmp_file_*
 
 # Locates all tests and launch them
-for dir in `ls -d "."/*/`
+for dir in `ls -d "$TESTDIR"/*/`
 do
-    echo "> $dir"
+	echo "--------------------------------------------"
+	echo "  >>     $dir"
+	echo "--------------------------------------------"
     for testname in `ls "$dir" | grep -v "~$"`
     do
-	   echo -n "   # $testname: "
-	   source $dir$testname
+	   echo -n "test #  $testname: "
+	   source "$dir$testname"
     done
 done
 
@@ -198,5 +201,5 @@ done
 rm -f $LTRACEOUTPUTFILE
 rm -f checker_tmp_file_*
 rm -f /tmp/.checker_tmp_file_*
-rm -f $OUTPUTFILE $EXPECTED $DIFF $ERROROUTPUTFILE $ERROREXPECTED
+rm -f *txt
 echo -ne "\033[30m"
