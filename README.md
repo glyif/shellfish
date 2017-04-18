@@ -12,15 +12,22 @@ Simple Shell project.
 
 ## File Breakdown
 ### Dockerfile
-The Dockerfile contains a simple set of instructions for Docker during build time and runtime.
+The Dockerfile contains a simple set of instructions for Docker during build
+time and runtime.
 
 ### init.sh
-This cript is a script, copied into the image that clones your shell repo, compiles it with all of the flags, clones the checker repo, moves your shell executable into the checker folder then runs the checker.
+This cript is a script, copied into the image that clones your shell repo,
+compiles it with all of the flags, clones the checker repo, moves your shell
+executable into the checker folder then runs the checker.
 
 ## Prerequisites
-The only prerequisite is to install docker. You can have this running in your vagrant or on your local host because it uses a container, it will not mess with your system and everytime you run the tests a new container will be started so you do not have to worry about any system issues.
+The only prerequisite is to install docker. You can have this running in your
+vagrant or on your local host because it uses a container, it will not mess
+with your system and everytime you run the tests a new container will be started
+so you do not have to worry about any system issues.
 
-To install Docker, please refer to the Docker install manuals. Just google: install docker
+To install Docker, please refer to the Docker install manual for Ubuntu trusty
+64: 'Trusty 14.04 (LTS)', linked here: https://docs.docker.com/engine/installation/linux/ubuntu/#install-using-the-repository
 
 NOTE: Install the CE edition, not the EE edition
 
@@ -35,25 +42,23 @@ $ docker build -t shellfish:latest .
 
 To run the tests
 ```bash
-$ docker run -ti --rm shellfish glyif
-# GITHUBUSR is the github user that the simple_shell is on
+$ docker run -ti --rm shellfish GITHUBUSR
+# GITHUBUSR is the github user that the simple_shell is on. e.g. glyif
 ```
 
 ### For Users running natively on MacOS, not vagrant
 When you run `docker run` you'll also need to include the following tags: `--security-opt seccomp:unconfined`
 
-  ### Expected Output
+## Expected Output & other Errors
 
-  Failed checks are output in RED, passed checks are output in GREEN.  ALL errors written to stderr are output for all instances.
+ Failed checks are output in RED, passed checks are output in GREEN.  ALL errors written to stderr are output for all instances.
   - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `[FAIL]`
   - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[PASS]`
 
-## Errors
-
-your shell will not run with our init script if it does not compile with the
-above -Warning flags.  If your shell does not run in 'non-interactive' mode,
-(i.e. executed through a ``|`` [pipe]) properly you will not pass.  If your
-shell does not exactly replicate the output of ``sh`` you will not pass.
+**NOTE:** your shell will not run with our init script if it does not compile
+with the above -Warning flags.  If your shell does not run in 'non-interactive'
+mode, (i.e. executed through a ``|`` [pipe]) properly you will not pass.  If
+your shell does not exactly replicate the output of ``sh`` you will not pass.
 
 ### Authors:
 
