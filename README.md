@@ -64,8 +64,8 @@ $ ./shellfish.bash
 
   ### Expected Output
 
-  ![#f03c15](https://placehold.it/15/f03c15/000000?text=FAIL)
-  ![#f03c15](https://placehold.it/15/f03c15/000000?text=PASS)
+  - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `[FAIL]`
+  - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[PASS]`
 
 ## Errors
 
