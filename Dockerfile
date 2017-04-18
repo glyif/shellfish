@@ -7,6 +7,7 @@ RUN apt-get install -y ltrace
 RUN apt-get install -y libc6-dev-i386
 RUN apt-get install -y libssl-dev
 RUN apt-get install -y nasm
+RUN apt-get install -y git
 
 COPY init.sh init.sh
 ENTRYPOINT ["/init.sh"]
