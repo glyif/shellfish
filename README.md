@@ -42,8 +42,8 @@ $ docker build -t shellfish:latest .
 
 To run the tests
 ```bash
-$ docker run -ti --rm shellfish glyif
-# GITHUBUSR is the github user that the simple_shell is on
+$ docker run -ti --rm shellfish GITHUBUSR
+# GITHUBUSR is the github user that the simple_shell is on. e.g. glyif
 ```
 
 ### For Users running natively on MacOS, not vagrant
