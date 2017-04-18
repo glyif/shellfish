@@ -15,7 +15,7 @@ touch $tmp_file
 echo "$command" | $SHELL > $tmp_file 2> $ERROROUTPUTFILE &
 cat $HOME/.simple_shell_history > $tmp_file
 cat $tmp_file | grep "echo Will your shell be ready by deadline?" > $OUTPUTFILE
-echo "echo Will your shell be ready by deadline?" > $EXPECTED
+> $EXPECTED
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS
