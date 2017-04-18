@@ -45,24 +45,21 @@ function print_ok()
 function print_error()
 {
 	if [[ -s $ERROROUTPUTFILE || -s $ERROREXPECTED ]]; then
-		echo -ne "\033[30m"
 		echo "---error outputs test---"
 		echo "------------------------"
 		if [ -s $ERROROUTPUTFILE ]; then
-			echo -ne "\033[37m"
 			echo "your error: "
 			cat $ERROROUTPUTFILE
 		else
 			echo -ne "\033[31m"
-			echo "your shell has no error output"
+			echo "**your shell has no error output, when error is needed**"
 		fi
 		if [ -s $ERROREXPECTED ]; then
-			echo -ne "\033[37m"
 			echo "expected error: "
 			cat $ERROREXPECTED
 		else
 			echo -ne "\033[31m"
-			echo "** there is no expected error **"
+			echo "**there is no expected error, but your shell outputs error**"
 		fi
 	fi
 	echo -ne "\033[37m"
