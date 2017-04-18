@@ -11,52 +11,56 @@ Project Shellfish is an automated task checker for Holberton School's 0x15. C -
 Simple Shell project.
 
 ## File Breakdown
+### Dockerfile
+The Dockerfile contains a simple set of instructions for Docker during build time and runtime.
 
-## Update
-Be sure to update your checker with this script.  This script sets **shellfish**
-as your remote upstream, then resets your current branch to the most recent
-updates from **shellfish** master.  You can also do this manually.
+### init.sh
+This cript is a script, copied into the image that clones your shell repo, compiles it with all of the flags, clones the checker repo, moves your shell executable into the checker folder then runs the checker.
 
+## Prerequisites
+The only prerequisite is to install docker. You can have this running in your vagrant or on your local host because it uses a container, it will not mess with your system and everytime you run the tests a new container will be started so you do not have to worry about any system issues.
+
+To install Docker, please refer to the Docker install manuals. Just google: install docker
+
+## Use
+After you have installed docker please follow the following instructions.
+
+You can either pull from Docker Hub or you can clone this repo yourself and build it.
+
+### Docker Hub
+NOTE: THIS METHOD REQUIRES YOU TO HAVE A DOCKER HUB ACCOUNT
+
+```bash
+$ docker login
+$ docker pull glyif/shellfish-docker
+$ docker image (OR docker image ls if you are on mac)
+
+# Copy the IMAGE ID of the glyif/shellfish-docker image.
 ```
-$ ./update
+
+To run the tests
+```bash
+$ docker run -ti --rm IMAGEID GITHUBUSR
+# IMAGEID is the image ID you copied
+# GITHUBUSR is the github user that the simple_shell is on
 ```
 
-## Configuration
+After initial build, you will not need to run the build again unless there's an update on the image which you'll be notified about.
 
-To get started all you need to do is run the `init.sh` script.
+### Manual build
+```bash
+$ git clone https://github.com/glyif/docker-shellfish.git
+$ cd docker-shellfish.git
+$ docker build .
 
+# Copy the last ID, which will be something like Successfully built ________
 ```
-$ ./init.sh
-```
 
-* if it is your first time, you will be prompted for your github username. This
-will be used to clone a copy of your `simple_shell` into a sub directory.
-
-  * **NOTE:** If the project is on your partner's github account, make sure to
-  use your partner's github name.
-
-* your project will be compiled with gcc and these Warning flags in the output
-file: ``hsh``.
-
-  ```
-  $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
-  ```
-
-* then your shell (``hsh`` file) will be copied into the **shellfish**
-directory, and your shell project directory will be deleted.
-
-  * **Bypass compiliation:** these steps can be bypassed if you copy your shell
-  into the directory for the **shellfish** checker.  If you bypass these steps,
-  be sure to properly compile your code.
-
-  * **test_shell:** you can modify the config file so that the line ``SHELL``
-  reads: ``SHELL="./test_shell"``.  This will use a basic shell as a test
-  instead of your shell.
-
-## Usage
-
-```
-$ ./shellfish.bash
+To run the tests
+```bash
+$ docker run -ti --rm IMAGEID GITHUBUSR
+# IMAGEID is the image ID you copied
+# GITHUBUSR is the github user that the simple_shell is on
 ```
 
 ## Errors

@@ -1,4 +1,0 @@
-#!/bin/bash
-git remote add upstream https://github.com/glyif/shellfish.git
-git fetch upstream master
-git reset --hard upstream/master
