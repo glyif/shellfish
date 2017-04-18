@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# exit with status
+
+command="echo Will your shell be ready by deadline?"
+tmp_file="checker_tmp_file_$RANDOM"
+
+# clean up
+stop_shell
+
+# create a pseudo random file
+touch $tmp_file
+
+# send commands
+echo "$command" | $SHELL > $tmp_file 2> $ERROROUTPUTFILE &
+cat $HOME/.simple_shell_history > $tmp_file
+cat $tmp_file | grep "echo Will your shell be ready by deadline?" > $OUTPUTFILE
+echo "echo Will your shell be ready by deadline?" > $EXPECTED
+
+# wait a little bit
+$SLEEP $SLEEPSECONDS
+
+# check the result
+check_diff
+
+# print error
+print_error
+
+# clean up
+stop_shell
