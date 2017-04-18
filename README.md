@@ -64,8 +64,11 @@ $ ./shellfish.bash
 
   ### Expected Output
 
+  Failed checks are output in RED:
   - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `[FAIL]`
+  Passed checks are output in GREEN:
   - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[PASS]`
+  Error messages written to stderr are output for all instances of errors for your personal review
 
 ## Errors
 
