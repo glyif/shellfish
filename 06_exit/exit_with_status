@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# exit with status
+
+command="exit 98"
+
+# clean up
+stop_shell
+
+# create a pseudo random file
+
+# send commands
+echo "$command" | $SHELL 2> $ERROROUTPUTFILE &
+echo $? > $OUTPUTFILE
+echo 98 > $EXPECTED
+
+# wait a little bit
+$SLEEP $SLEEPSECONDS
+
+# check the result
+check_diff
+
+# print error
+print_error
+
+# clean up
+stop_shell
