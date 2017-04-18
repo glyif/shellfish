@@ -25,29 +25,6 @@ To install Docker, please refer to the Docker install manuals. Just google: inst
 ## Use
 After you have installed docker please follow the following instructions.
 
-You can either pull from Docker Hub or you can clone this repo yourself and build it.
-
-### Docker Hub
-NOTE: THIS METHOD REQUIRES YOU TO HAVE A DOCKER HUB ACCOUNT
-
-```bash
-$ docker login
-$ docker pull glyif/shellfish-docker
-$ docker image (OR docker image ls if you are on mac)
-
-# Copy the IMAGE ID of the glyif/shellfish-docker image.
-```
-
-To run the tests
-```bash
-$ docker run -ti --rm IMAGEID GITHUBUSR
-# IMAGEID is the image ID you copied
-# GITHUBUSR is the github user that the simple_shell is on
-```
-
-After initial build, you will not need to run the build again unless there's an update on the image which you'll be notified about.
-
-### Manual build
 ```bash
 $ git clone https://github.com/glyif/shellfish.git
 $ cd shellfish
