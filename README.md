@@ -75,3 +75,4 @@ shell does not exactly replicate the output of ``sh`` you will not pass.
 Julien Barbier: julien@holbertonschool.com  
 Bobby Yang: 122@holbertonschool.com  
 David John Coleman II: lcsw@davidjohncoleman.com
+Elaine Yeung <elaine.yeung@holbertonschool.com>
