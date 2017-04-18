@@ -44,6 +44,9 @@ function print_ok()
 #######################################
 function print_error()
 {
+	echo -ne "\033[30m"
+	echo "-------------test to show error outputs--------------"
+	echo "-----------------------------------------------------"
 	echo -ne "\033[31m"
 	if [[ -s $ERROROUTPUTFILE || -s $ERROREXPECTED ]]; then
 		if [ -s $ERROROUTPUTFILE ]; then
