@@ -30,15 +30,12 @@ After you have installed docker please follow the following instructions.
 ```bash
 $ git clone https://github.com/glyif/shellfish.git
 $ cd shellfish
-$ docker build .
-
-# Copy the last ID, which will be something like Successfully built ________
+$ docker build -t shellfish:latest .
 ```
 
 To run the tests
 ```bash
-$ docker run -ti --rm IMAGEID GITHUBUSR
-# IMAGEID is the image ID you copied
+$ docker run -ti --rm shellfish glyif
 # GITHUBUSR is the github user that the simple_shell is on
 ```
 
