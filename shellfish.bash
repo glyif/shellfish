@@ -1,4 +1,5 @@
 #!/bin/bash
+cd shellfish
 #
 # Performing checks on the Holberton School "simple shell" project
 
