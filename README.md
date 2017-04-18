@@ -17,8 +17,7 @@ Be sure to update your checker with this script.  This script sets **shellfish**
 as your remote upstream, then implements `reset --hard`, which resets your
 current branch to the most recent updates from **shellfish** master.  All your
 changes will be lost.  If you would like to contribute to this project, do not
-use the update script.  You should then use another process explained by:
-@yeungegs here:  
+use the update script.  You should then use another process outlined here:
 https://gist.github.com/yeungegs/b18019dbf0466a523b0521bae405b066
 
 ```
@@ -62,6 +61,13 @@ directory, and your shell project directory will be deleted.
 ```
 $ ./shellfish.bash
 ```
+
+  ### Expected Output
+
+  [```diff
+  +PASS```]
+  [```diff
+  -FAIL```]
 
 ## Errors
 
