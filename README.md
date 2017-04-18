@@ -63,6 +63,9 @@ $ docker run -ti --rm IMAGEID GITHUBUSR
 # GITHUBUSR is the github user that the simple_shell is on
 ```
 
+### For Users running natively on MacOS, not vagrant
+When you run `docker run` you'll also need to include the following tags: `--security-opt seccomp:unconfined`
+
   ### Expected Output
 
   Failed checks are output in RED:
