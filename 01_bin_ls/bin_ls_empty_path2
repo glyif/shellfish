@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# Empty the PATH and check if ls still works
+# Empty the PATH and check if /bin/ls still works
 
-command="ls"
+command="/bin/ls"
 tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up

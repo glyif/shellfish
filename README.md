@@ -63,6 +63,11 @@ $ docker run -ti --rm IMAGEID GITHUBUSR
 # GITHUBUSR is the github user that the simple_shell is on
 ```
 
+  ### Expected Output
+
+  - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `[FAIL]`
+  - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[PASS]`
+
 ## Errors
 
 your shell will not run with our init script if it does not compile with the
@@ -74,4 +79,5 @@ shell does not exactly replicate the output of ``sh`` you will not pass.
 
 Julien Barbier: julien@holbertonschool.com  
 Bobby Yang: 122@holbertonschool.com  
-David John Coleman II: lcsw@davidjohncoleman.com
+David John Coleman II: lcsw@davidjohncoleman.com  
+Elaine Yeung elaine.yeung@holbertonschool.com

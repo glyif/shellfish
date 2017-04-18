@@ -1,8 +1,7 @@
 #!/bin/bash
 #
-# Empty the PATH and check if ls still works
-
-command="ls"
+# parse this lsss
+command="lsss"
 tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
@@ -11,16 +10,9 @@ stop_shell
 # create a pseudo random file
 touch $tmp_file
 
-# empty PATH
-OLDPATH="$PATH"
-PATH=""
-
 # run command
 echo "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
 echo "$command" | sh > $EXPECTED 2> $ERROREXPECTED
-
-# put PATH back
-PATH="$OLDPATH"
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS
@@ -28,7 +20,7 @@ $SLEEP $SLEEPSECONDS
 # check the result
 check_diff
 
-#errors
+# print error
 print_error
 
 # clean up

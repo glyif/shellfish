@@ -175,17 +175,6 @@ echo "contributors:"
 cat AUTHORS | tail -n +2
 echo ""
 
-# Prompt to check to continue
-echo -ne "\033[31m"
-echo "type 'y' or 'Y' & click 'enter' to continue"
-echo "(ensure you have the most updated checker)"
-echo ""
-read -p "type anything, plus 'enter' to quit: " choice
-case "$choice" in
-  y|Y ) echo "";;
-  * ) echo -ne "\033[30m" && exit 1;;
-esac
-
 # Cleanup
 echo -ne "\033[37m"
 echo "    --------------------------------------"
@@ -197,10 +186,12 @@ rm -f checker_tmp_file_*
 # Locates all tests and launch them
 for dir in `ls -d "$TESTDIR"/*/`
 do
-    echo "> $dir"
+	echo "--------------------------------------------"
+	echo "  >>     $dir"
+	echo "--------------------------------------------"
     for testname in `ls "$dir" | grep -v "~$"`
     do
-	   echo -n "   # $testname: "
+	   echo -n "test #  $testname: "
 	   source "$dir$testname"
     done
 done
@@ -210,5 +201,5 @@ done
 rm -f $LTRACEOUTPUTFILE
 rm -f checker_tmp_file_*
 rm -f /tmp/.checker_tmp_file_*
-rm -f $OUTPUTFILE $EXPECTED $DIFF $ERROROUTPUTFILE $ERROREXPECTED
+rm -f *txt
 echo -ne "\033[30m"
