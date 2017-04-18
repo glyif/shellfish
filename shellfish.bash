@@ -46,24 +46,23 @@ function print_error()
 {
 	if [[ -s $ERROROUTPUTFILE || -s $ERROREXPECTED ]]; then
 		echo -ne "\033[30m"
-		echo "-------------test to show error outputs--------------"
-		echo "-----------------------------------------------------"
-		echo -ne "\033[31m"
+		echo "---error outputs test---"
+		echo "------------------------"
 		if [ -s $ERROROUTPUTFILE ]; then
-		   echo "your error: "
-		   cat $ERROROUTPUTFILE
+			echo -ne "\033[37m"
+			echo "your error: "
+			cat $ERROROUTPUTFILE
 		else
-			echo "************************************"
-			echo "** your shell has no error output **"
-			echo "************************************"
+			echo -ne "\033[31m"
+			echo "your shell has no error output"
 		fi
 		if [ -s $ERROREXPECTED ]; then
+			echo -ne "\033[37m"
 			echo "expected error: "
 			cat $ERROREXPECTED
 		else
-			echo "********************************"
+			echo -ne "\033[31m"
 			echo "** there is no expected error **"
-			echo "********************************"
 		fi
 	fi
 	echo -ne "\033[37m"
