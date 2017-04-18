@@ -22,6 +22,8 @@ The only prerequisite is to install docker. You can have this running in your va
 
 To install Docker, please refer to the Docker install manuals. Just google: install docker
 
+NOTE: Install the CE edition, not the EE edition
+
 ## Use
 After you have installed docker please follow the following instructions.
 
