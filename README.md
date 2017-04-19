@@ -45,6 +45,18 @@ To run the tests
 $ docker run -ti --rm shellfish GITHUBUSR
 # GITHUBUSR is the github user that the simple_shell is on. e.g. glyif
 ```
+
+### FOR UBUNTU USERS
+You will need to run `sudo` in from of your docker command.
+IE:
+```bash
+$ sudo docker build -t shellfish:latest .
+```
+AND
+```bash
+$ sudo docker run -ti --rm shellfish GITHUBUSR
+```
+
 * **NOTE:** once you build your docker image, for continued testing all
   you need to do is update your remote master of your shell repository,
   and then repeat the previous command.  There is no need to update your
