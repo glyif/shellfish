@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# parse this lsss
+# parse this: 'lsss'
+
 command="lsss"
 tmp_file="checker_tmp_file_$RANDOM"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# print env
+# print env with junk after env
 
 command="env CheckerIsBrokenCallGuillaumeAndJulien"
 

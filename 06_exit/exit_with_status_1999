@@ -1,9 +1,8 @@
 #!/bin/bash
 #
-# exit status 1999
+# exit status 257
 
-command="ls
-exit 1999"
+command="exit 257"
 tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
@@ -13,9 +12,10 @@ stop_shell
 touch $tmp_file
 
 # send commands
-echo "$command" | $SHELL > $tmp_file 2> $ERROROUTPUTFILE &
+echo "$command" | $SHELL
 echo "$?" > $OUTPUTFILE
-echo "1999" > $EXPECTED
+echo "$command" | sh
+echo "$?" > $EXPECTED
 
 
 # wait a little bit

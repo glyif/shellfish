@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# parse this /bin/lsls
+# parse this command:  '/bin/lsls'
 command="/bin/lsls"
 tmp_file="checker_tmp_file_$RANDOM"
 

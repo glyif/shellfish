@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# env with random args
+# env with multiple random args after call to env
 
 command="env echo baba ganoush"
 

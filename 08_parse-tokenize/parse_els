@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# parse this els
+# parse this command 'els'
 command="els"
 tmp_file="checker_tmp_file_$RANDOM"
 

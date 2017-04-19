@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# parse envvvv
+# parse 'envvvv' command
 command="envvvv"
 tmp_file="checker_tmp_file_$RANDOM"
 

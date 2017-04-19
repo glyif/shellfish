@@ -2,8 +2,7 @@
 #
 # exit with status
 
-command="ls
-exit 98"
+command="exit 98"
 tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
@@ -13,9 +12,10 @@ stop_shell
 touch $tmp_file
 
 # send commands
-echo "$command" | $SHELL > $tmp_file 2> $ERROROUTPUTFILE &
+echo "$command" | $SHELL
 echo "$?" > $OUTPUTFILE
-echo "98" > $EXPECTED
+echo "$command" | sh
+echo "$?" > $EXPECTED
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS

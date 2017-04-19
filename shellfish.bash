@@ -45,21 +45,25 @@ function print_ok()
 function print_error()
 {
 	if [[ -s $ERROROUTPUTFILE || -s $ERROREXPECTED ]]; then
-		echo "---error outputs test---"
-		echo "------------------------"
+		echo "------------error outputs test--------------"
+		echo "--------------------------------------------"
 		if [ -s $ERROROUTPUTFILE ]; then
-			echo "your error: "
+			echo "<     your error: "
+			echo "--------------------------------------------"
 			cat $ERROROUTPUTFILE
 		else
 			echo -ne "\033[31m"
-			echo "**your shell has no error output, when error is needed**"
+			echo "** your shell has nothing written to stdout **"
+			echo "**  when there is an expected error output  **"
 		fi
 		if [ -s $ERROREXPECTED ]; then
-			echo "expected error: "
+			echo ">     expected error: "
+			echo "--------------------------------------------"
 			cat $ERROREXPECTED
 		else
 			echo -ne "\033[31m"
-			echo "**there is no expected error, but your shell outputs error**"
+			echo "**   there is no expected error,   **"
+			echo "** but your shell writes to stderr **"
 		fi
 	fi
 	echo -ne "\033[37m"
@@ -176,8 +180,8 @@ echo ""
 
 # Cleanup
 echo -ne "\033[37m"
-echo "    --------------------------------------"
-echo "    --------------------------------------"
+echo "--------------------------------------------"
+echo "--------------------------------------------"
 > $OUTPUTFILE && > $EXPECTED && > $DIFF && > $ERROROUTPUTFILE && > $ERROREXPECTED
 rm -f $LTRACEOUTPUTFILE
 rm -f checker_tmp_file_*
@@ -190,8 +194,9 @@ do
 	echo "--------------------------------------------"
     for testname in `ls "$dir" | grep -v "~$"`
     do
-	   echo -n "test #  $testname: "
-	   source "$dir$testname"
+		cat $dir$testname | head -3 | tail -1
+		echo -n "test -> $testname: "
+		source "$dir$testname"
     done
 done
 

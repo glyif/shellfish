@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# print env
+# print env, standard
 
 command="env"
 tmp_file="checker_tmp_file_$RANDOM"

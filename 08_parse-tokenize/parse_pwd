@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# parse this pwd-
+# parse this the command: 'pwd-'
+
 command="pwd-"
 tmp_file="checker_tmp_file_$RANDOM"
 
