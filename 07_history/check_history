@@ -1,9 +1,8 @@
 #!/bin/bash
 #
-# exit with status
+# checking in with your history
 
-command="echo Will your shell be ready by deadline?"
-tmp_file="checker_tmp_file_$RANDOM"
+command="exit 257"
 
 # clean up
 stop_shell
@@ -12,10 +11,8 @@ stop_shell
 touch $tmp_file
 
 # send commands
-echo "$command" | $SHELL > $tmp_file 2> $ERROROUTPUTFILE &
-cat $HOME/.simple_shell_history > $tmp_file
-cat $tmp_file | grep "echo Will your shell be ready by deadline?" > $OUTPUTFILE
-> $EXPECTED
+cat $HOME/.simple_shell_history | grep "exit 257" > $OUTPUTFILE
+echo "exit 257" > $EXPECTED
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS

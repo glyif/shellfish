@@ -183,6 +183,7 @@ echo -ne "\033[37m"
 echo "--------------------------------------------"
 echo "--------------------------------------------"
 > $OUTPUTFILE && > $EXPECTED && > $DIFF && > $ERROROUTPUTFILE && > $ERROREXPECTED
+rm -f $HOME/.simple_shell_history
 rm -f $LTRACEOUTPUTFILE
 rm -f checker_tmp_file_*
 
