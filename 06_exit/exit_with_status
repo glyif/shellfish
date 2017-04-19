@@ -2,15 +2,18 @@
 #
 # exit with status
 
-command="exit 98"
+command="ls
+exit 98"
+tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
 stop_shell
 
 # create a pseudo random file
+touch $tmp_file
 
 # send commands
-echo "$command" | $SHELL 2> $ERROROUTPUTFILE &
+echo "$command" | $SHELL > $tmp_file 2> $ERROROUTPUTFILE &
 echo "$?" > $OUTPUTFILE
 echo "98" > $EXPECTED
 

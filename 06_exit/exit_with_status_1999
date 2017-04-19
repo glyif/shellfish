@@ -2,14 +2,18 @@
 #
 # exit status 1999
 
-command="exit 1999"
+command="ls
+exit 1999"
+tmp_file="checker_tmp_file_$RANDOM"
+
 # clean up
 stop_shell
 
 # create a pseudo random file
+touch $tmp_file
 
 # send commands
-echo "$command" | $SHELL 2> $ERROROUTPUTFILE &
+echo "$command" | $SHELL > $tmp_file 2> $ERROROUTPUTFILE &
 echo "$?" > $OUTPUTFILE
 echo "1999" > $EXPECTED
 
