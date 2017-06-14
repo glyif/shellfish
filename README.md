@@ -1,6 +1,7 @@
 # Project Shellfish
 
 __A project for:__
+
 <img src="https://github.com/johncoleman83/shellfish/blob/master/holberton-logo.png" alt="Holberton logo">
 
 ## RTFM
