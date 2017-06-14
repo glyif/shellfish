@@ -13,16 +13,16 @@ touch $tmp_file
 
 #run expected
 env > $tmp_file
-cat $tmp_file | head -n -5 > $EXPECTED
+cat $tmp_file | head -n -5 > "$EXPECTED"
 rm -f $tmp_file
 
 # run command
 touch $tmp_file
-echo $command | $SHELL > $tmp_file
-cat $tmp_file | head -n -5 > $OUTPUTFILE
+echo $command | "$SHELL" > $tmp_file
+cat $tmp_file | head -n -5 > "$OUTPUTFILE"
 
 # wait a little bit
-$SLEEP $SLEEPSECONDS
+"$SLEEP" "$SLEEPSECONDS"
 
 # print error
 print_error

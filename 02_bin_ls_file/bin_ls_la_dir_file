@@ -18,11 +18,11 @@ chmod 761 $tmp_filepath
 echo "$command" > $tmp_file_command
 
 # send commands
-cat $tmp_file_command | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
-cat $tmp_file_command | sh > $EXPECTED
+cat $tmp_file_command | "$SHELL" > "$OUTPUTFILE" 2> "$ERROROUTPUTFILE" &
+cat $tmp_file_command | sh > "$EXPECTED"
 
 # wait a little bit
-$SLEEP $SLEEPSECONDS
+"$SLEEP" "$SLEEPSECONDS"
 
 # check the result
 check_diff

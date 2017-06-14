@@ -44,22 +44,22 @@ function print_ok()
 #######################################
 function print_error()
 {
-	if [[ -s $ERROROUTPUTFILE || -s $ERROREXPECTED ]]; then
+	if [[ -s "$ERROROUTPUTFILE" || -s "$ERROREXPECTED" ]]; then
 		echo "------------error outputs test--------------"
 		echo "--------------------------------------------"
-		if [ -s $ERROROUTPUTFILE ]; then
+		if [ -s "$ERROROUTPUTFILE" ]; then
 			echo "<     your error: "
 			echo "--------------------------------------------"
-			cat $ERROROUTPUTFILE
+			cat "$ERROROUTPUTFILE"
 		else
 			echo -ne "\033[31m"
 			echo "** your shell has nothing written to stdout **"
 			echo "**  when there is an expected error output  **"
 		fi
-		if [ -s $ERROREXPECTED ]; then
+		if [ -s "$ERROREXPECTED" ]; then
 			echo ">     expected error: "
 			echo "--------------------------------------------"
-			cat $ERROREXPECTED
+			cat "$ERROREXPECTED"
 		else
 			echo -ne "\033[31m"
 			echo "**   there is no expected error,   **"
@@ -82,15 +82,15 @@ function print_error()
 #######################################
 function check_diff()
 {
-	diff $OUTPUTFILE $EXPECTED > $DIFF
-	if [ -s $DIFF ]; then
+	diff "$OUTPUTFILE" "$EXPECTED" > "$DIFF"
+	if [ -s "$DIFF" ]; then
 		print_ko
 		echo -ne "\033[30m"
 		echo "--------------------!outputs differ!---------------------"
 		echo "          your shell '<' -- expected output '>'"
 		echo "---------------------------------------------------------"
 		echo -ne "\033[31m"
-		cat $DIFF
+		cat "$DIFF"
 		echo -ne "\033[37m"
 	else
 		print_ok
@@ -108,14 +108,14 @@ function check_diff()
 #######################################
 function check_function()
 {
-	if [ -s $DIFF ]; then
+	if [ -s "$DIFF" ]; then
 		print_ko
 		echo -ne "\033[30m"
 		echo "** ltrace returned these functions from your file:"
 		echo "% time     seconds  usecs/call     calls      function"
 		echo "------ ----------- ----------- --------- --------------------"
 		echo -ne "\033[31m"
-		cat $DIFF
+		cat "$DIFF"
 		echo -ne "\033[37m"
 		echo "------ ----------- ----------- --------- --------------------"
 	else
@@ -140,11 +140,11 @@ function check_function()
 #######################################
 function stop_shell()
 {
-    if [ `pidof $SHELL | wc -l` -ne 0 ]; then
-	   killall -9 $SHELL 2>&1 > /dev/null
+    if [ $(pidof "$SHELL" | wc -l) -ne 0 ]; then
+	   killall -9 "$SHELL" > /dev/null 2>&1
     fi
-	> $OUTPUTFILE && > $EXPECTED && > $DIFF && > $ERROROUTPUTFILE && > $ERROREXPECTED
-	rm -f $LTRACEOUTPUTFILE
+	> "$OUTPUTFILE" && > "$EXPECTED" && > "$DIFF" && > "$ERROROUTPUTFILE" && > "$ERROREXPECTED"
+	rm -f "$LTRACEOUTPUTFILE"
 	rm -f checker_tmp_file_*
 }
 
@@ -182,29 +182,29 @@ echo ""
 echo -ne "\033[37m"
 echo "--------------------------------------------"
 echo "--------------------------------------------"
-> $OUTPUTFILE && > $EXPECTED && > $DIFF && > $ERROROUTPUTFILE && > $ERROREXPECTED
-rm -f $HOME/.simple_shell_history
-rm -f $LTRACEOUTPUTFILE
+> "$OUTPUTFILE" && > "$EXPECTED" && > "$DIFF" && > "$ERROROUTPUTFILE" && > "$ERROREXPECTED"
+rm -f "$HOME"/.simple_shell_history
+rm -f "$LTRACEOUTPUTFILE"
 rm -f checker_tmp_file_*
 
 # Locates all tests and launch them
-for dir in `ls -d "$TESTDIR"/*/`
+for dir in $(ls -d "$TESTDIR"/*/)
 do
 	echo "--------------------------------------------"
 	echo "  >>     $dir"
 	echo "--------------------------------------------"
-    for testname in `ls "$dir" | grep -v "~$"`
+    for testname in $(ls "$dir" | grep -v "~$")
     do
-		cat $dir$testname | head -3 | tail -1
+		cat "${dir}${testname}" | head -3 | tail -1
 		echo -n "test -> $testname: "
 		source "$dir$testname"
     done
 done
 
 # Cleanup
-> $OUTPUTFILE && > $EXPECTED && > $DIFF && > $ERROROUTPUTFILE && > $ERROREXPECTED
-rm -f $LTRACEOUTPUTFILE
+> "$OUTPUTFILE" && > "$EXPECTED" && > "$DIFF" && > "$ERROROUTPUTFILE" && > "$ERROREXPECTED"
+rm -f "$LTRACEOUTPUTFILE"
 rm -f checker_tmp_file_*
 rm -f /tmp/.checker_tmp_file_*
-rm -f *txt
+rm -f ./*txt
 echo -ne "\033[30m"

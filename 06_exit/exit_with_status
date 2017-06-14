@@ -12,13 +12,13 @@ stop_shell
 touch $tmp_file
 
 # send commands
-echo "$command" | $SHELL
-echo "$?" > $OUTPUTFILE
+echo "$command" | "$SHELL"
+echo "$?" > "$OUTPUTFILE"
 echo "$command" | sh
-echo "$?" > $EXPECTED
+echo "$?" > "$EXPECTED"
 
 # wait a little bit
-$SLEEP $SLEEPSECONDS
+"$SLEEP" "$SLEEPSECONDS"
 
 # check the result
 check_diff

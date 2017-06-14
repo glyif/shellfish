@@ -16,14 +16,14 @@ OLDPATH="$PATH"
 PATH=":$PATH"
 
 # send commands
-$ECHO "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
-$ECHO "$command" | sh > $EXPECTED 2> $ERROREXPECTED
+$ECHO "$command" | "$SHELL" > "$OUTPUTFILE" 2> "$ERROROUTPUTFILE" &
+$ECHO "$command" | sh > "$EXPECTED" 2> "$ERROREXPECTED"
 
 # put PATH back
 PATH="$OLDPATH"
 
 # wait a little bit
-$SLEEP $SLEEPSECONDS
+"$SLEEP" "$SLEEPSECONDS"
 
 # check the result
 check_diff
