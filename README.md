@@ -1,6 +1,7 @@
-<img src="https://www.holbertonschool.com/assets/holberton-logo-1cc451260ca3cd297def53f2250a9794810667c7ca7b5fa5879a569a457bf16f.png" alt="Holberton logo">
-
 # Project Shellfish
+
+__A project for:__
+<img src="https://github.com/glyif/shellfish/blob/master/holberton-logo.png" alt="Holberton logo">
 
 ## RTFM
 
