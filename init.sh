@@ -14,5 +14,8 @@ git clone https://github.com/glyif/shellfish
 #move exec into checker repo
 mv hsh ./shellfish
 
+#cd into shell
+cd shellfish
+
 #run the chekcer
-./shellfish/shellfish.bash
+./shellfish.bash
