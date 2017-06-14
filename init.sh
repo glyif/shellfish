@@ -2,17 +2,8 @@
 #pulls github repo, names it src and cds into it
 git clone https://github.com/"$1"/simple_shell.git src
 
-#cd into folder
-cd src
-
 #runs gcc with alllllll the flags
-gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
-
-#copies hsh into root
-cp hsh ..
-
-#goes back into root
-cd ../
+gcc -Wall -Werror -Wextra -pedantic ./src/*.c -o hsh
 
 #removes src
 rm -rf src
@@ -21,10 +12,7 @@ rm -rf src
 git clone https://github.com/glyif/shellfish
 
 #move exec into checker repo
-mv hsh shellfish
-
-#cd into shell
-cd shellfish
+mv hsh ./shellfish
 
 #run the chekcer
-./shellfish.bash
+./shellfish/shellfish.bash
