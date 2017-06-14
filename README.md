@@ -1,6 +1,6 @@
-# Project Shellfish
+# Shellfish
 
-__A project for:__
+__a project for:__
 
 <img src="https://github.com/johncoleman83/shellfish/blob/master/holberton-logo.png" alt="Holberton logo">
 
