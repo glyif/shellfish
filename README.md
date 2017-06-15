@@ -69,7 +69,7 @@ $ sudo docker run -ti --rm shellfish GITHUBUSR
 ## Expected Output & other Errors
 
 Failed checks are output in RED, passed checks are output in GREEN.  ALL errors written to stderr are output for all instances.  When your shell and `sh` both output errors, the errors are written in grey.  If your shell does not have an error, but `sh` does, the output is in RED, and visa versa.
- 
+
   - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `[FAIL]`
   - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[PASS]`
 
