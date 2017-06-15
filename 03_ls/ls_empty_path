@@ -17,18 +17,18 @@ OLDPATH="$PATH"
 PATH=""
 
 # send commands
-$ECHO "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
+$ECHO "$command" | "$SHELL" > "$OUTPUTFILE" 2> "$ERROROUTPUTFILE" &
 
 # put PATH back
 PATH="$OLDPATH"
 
 # wait a little bit
-$SLEEP $SLEEPSECONDS
+"$SLEEP" "$SLEEPSECONDS"
 
 # check the result
-nmatch=`$CAT $OUTPUTFILE | $GREP -c "$tmp_file"`
+nmatch=`$CAT "$OUTPUTFILE" | $GREP -c "$tmp_file"`
 if [ $nmatch -eq 0 ]; then
-    if [ `$CAT $ERROROUTPUTFILE | wc -c` -ge 5 ]; then
+    if [ `$CAT "$ERROROUTPUTFILE" | wc -c` -ge 5 ]; then
 	   print_ok
     else
 	   print_ok

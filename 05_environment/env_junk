@@ -8,11 +8,11 @@ command="env CheckerIsBrokenCallGuillaumeAndJulien"
 stop_shell
 
 # run command
-echo "$command" | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
-$command > $EXPECTED 2> $ERROREXPECTED
+echo "$command" | "$SHELL" > "$OUTPUTFILE" 2> "$ERROROUTPUTFILE" &
+$command > "$EXPECTED" 2> "$ERROREXPECTED"
 
 # wait a little bit
-$SLEEP $SLEEPSECONDS
+"$SLEEP" "$SLEEPSECONDS"
 
 # check the result
 check_diff

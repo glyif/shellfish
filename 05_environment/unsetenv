@@ -15,12 +15,12 @@ stop_shell
 touch $tmp_file
 
 # run command
-echo "$command" | $SHELL > $tmp_file 2> $ERROROUTPUTFILE &
-cat $tmp_file | grep AUSTIN=KeepAustinWeird > $OUTPUTFILE
-> $EXPECTED
+echo "$command" | "$SHELL" > $tmp_file 2> "$ERROROUTPUTFILE" &
+cat $tmp_file | grep AUSTIN=KeepAustinWeird > "$OUTPUTFILE"
+> "$EXPECTED"
 
 # wait a little bit
-$SLEEP $SLEEPSECONDS
+"$SLEEP" "$SLEEPSECONDS"
 
 # check the result
 check_diff

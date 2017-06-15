@@ -10,10 +10,10 @@ command="/bin/ls
 stop_shell
 
 # send commands
-echo "$command" | ltrace -bcf -o $LTRACEOUTPUTFILE $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
+echo "$command" | ltrace -bcf -o $LTRACEOUTPUTFILE "$SHELL" > "$OUTPUTFILE" 2> "$ERROROUTPUTFILE" &
 
 # wait a little bit
-$SLEEP $SLEEPSECONDS
+"$SLEEP" "$SLEEPSECONDS"
 
 # check the result
 nmatch=`cat $LTRACEOUTPUTFILE | grep strcpy | wc -l`

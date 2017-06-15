@@ -11,11 +11,11 @@ stop_shell
 echo "$command" > $tmp_file
 
 # run command
-cat $tmp_file | $SHELL > $OUTPUTFILE 2> $ERROROUTPUTFILE &
-cat $tmp_file | sh > $EXPECTED
+cat $tmp_file | "$SHELL" > "$OUTPUTFILE" 2> "$ERROROUTPUTFILE" &
+cat $tmp_file | sh > "$EXPECTED"
 
 # wait a little bit
-$SLEEP $SLEEPSECONDS
+"$SLEEP" "$SLEEPSECONDS"
 
 # check the result
 check_diff

@@ -3,14 +3,17 @@
 # Project Shellfish
 
 ## RTFM
+
 **Please look into the code before you use it!**  We are using sudo, so be sure
 you know what you are doing first! Don't trust us; look in the code!
 
 ## Synopsis
+
 Project Shellfish is an automated task checker for Holberton School's 0x15. C -
 Simple Shell project.
 
 ## File Breakdown
+
 * Dockerfile
   The Dockerfile contains a simple set of instructions for Docker during build
   time and runtime.
@@ -21,6 +24,7 @@ Simple Shell project.
   executable into the checker folder then runs the checker.
 
 ## Prerequisites
+
 The only prerequisite is to install docker. You can have this running in your
 vagrant or on your local host because it uses a container, it will not mess
 with your system and everytime you run the tests a new container will be started
@@ -57,18 +61,26 @@ AND
 $ sudo docker run -ti --rm shellfish GITHUBUSR
 ```
 
-* **NOTE:** once you build your docker image, for continued testing all
-  you need to do is update your remote master of your shell repository,
-  and then repeat the previous command.  There is no need to update your
-  checker.  The update process for the checker occurs automatically.
+**NOTE:**
 
- * For Users running natively on MacOS, not vagrant
-   When you run `docker run` you'll also need to include the following
-   tags: `--security-opt seccomp:unconfined`
+* once you build your docker image, for continued testing all you need to do is
+  update your remote master of your shell repository, and then repeat the
+  previous `docker run` command.  There is no need to update your checker.
+  The update process for the checker occurs automatically.
+
+* for Users running natively on MacOS, not vagrant
+  When you run `docker run` you'll also need to include the following
+  tags: `--security-opt seccomp:unconfined`
+
+* error: `docker: Got permission denied` do you need to use `sudo`?
+
 
 ## Expected Output & other Errors
 
-Failed checks are output in RED, passed checks are output in GREEN.  ALL errors written to stderr are output for all instances.  When your shell and `sh` both output errors, the errors are written in grey.  If your shell does not have an error, but `sh` does, the output is in RED, and visa versa.
+Failed checks are output in RED, passed checks are output in GREEN.  ALL errors
+written to stderr are output for all instances.  When your shell and `sh` both
+output errors, the errors are written in grey.  If your shell does not have an
+error, but `sh` does, the output is in RED, and visa versa.
 
   - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `[FAIL]`
   - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[PASS]`
@@ -79,7 +91,8 @@ Failed checks are output in RED, passed checks are output in GREEN.  ALL errors 
   your shell does not exactly replicate the output of ``sh`` you will not pass.
 
 ## Contribute:
-If you would like to contribute to this project, please follow the process outlined here: https://gist.github.com/yeungegs/b18019dbf0466a523b0521bae405b066
+If you would like to contribute to this project, please follow the process
+outlined here: https://gist.github.com/yeungegs/b18019dbf0466a523b0521bae405b066
 
 ## Authors:
 
