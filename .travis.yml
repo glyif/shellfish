@@ -1,5 +1,0 @@
-language: bash
-
-sudo: false
-
-script: "gcc --version"
